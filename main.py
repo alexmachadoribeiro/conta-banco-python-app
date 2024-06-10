@@ -29,7 +29,6 @@ if __name__ == '__main__':
             correntista['Nome'] = input('Informe o nome a ser cadastrado: ')
             correntistas.append(correntista)
             print(f'{correntista['Nome']} cadastrado com sucesso.')
-            
             continue
 
         # entra nas operações
@@ -50,15 +49,12 @@ if __name__ == '__main__':
 
                             operacao = input('Operação desejada: ')
                             os.system('cls')
-
                             # verifica a operação escolhida
                             match operacao:
-                                
                                 # exibe o saldo
                                 case '1':
                                     print(f'Saldo: R$ {saldo:,.2f}')
                                     continue
-
                                 # depósito
                                 case '2':
                                     valor = str(input('Valor do depósito: R$ '))
@@ -70,7 +66,6 @@ if __name__ == '__main__':
                                     print(f'Saldo atual: R$ {saldo:,.2f}')
 
                                     continue
-
                                 # saque
                                 case '3':
                                     valor = str(input('Valor do saque: R$ '))
@@ -84,35 +79,27 @@ if __name__ == '__main__':
                                         print(f'Saldo atual: R$ {saldo:,.2f}')
                                     else:
                                         print('Não foi possível efetuar o saque.')
-
                                     continue
-
                                 # encerra as operações e volta para o menu anterior
                                 case '4':
                                     break
-
                                 # operação inexistente
                                 case _:
                                     print('Operação inválida.')
                                     continue
-
                     # avança para o próximo loop caso o nome não seja encontrado
                     else:
                         continue
-            
             # mensagem de nome não encontrado
             except:
                 print(f'{nome} não encontrado.')
-
             # volta para o menu anterior
             continue
-
         # exibe a lista de correntistas
         elif opcao == '3':
             for correntista in correntistas:
                 print(correntista)
             continue
-
         # exclui correntista
         elif opcao == '4':
             indice = int(input('Informe o ID da conta a ser excluída: '))
@@ -122,13 +109,10 @@ if __name__ == '__main__':
                 print(f'Conta {indice} deletada com sucesso.')
             except:
                 print('Não foi possível deletar conta.')
-            
             continue
-
         # encerra programa
         elif opcao == '5':
             break
-
         # invalida a opção
         else:
             print('Opção inválida.')
